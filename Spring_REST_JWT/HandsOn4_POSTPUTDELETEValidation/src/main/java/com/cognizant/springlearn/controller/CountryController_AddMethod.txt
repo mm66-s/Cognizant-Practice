@@ -1,0 +1,13 @@
+// Add this method inside the existing CountryController class:
+
+import javax.validation.Valid;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+@PostMapping("/countries")
+public Country addCountry(@RequestBody @Valid Country country) {
+    LOGGER.info("Start");
+    LOGGER.debug("Country received: {}", country.toString());
+    LOGGER.info("End");
+    return country;
+}
